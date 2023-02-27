@@ -13,17 +13,92 @@
         body {
             font-family: 'Inter', sans-serif;
             font-family: 'Lato', sans-serif;
+            margin: 0em;
+        }
+
+        #top {
+            background-color: rgb(167, 183, 255);
+            height: 80px;
+        }
+        #middle {
+            background-color: rgb(216, 216, 216);
+            height: 700px;
+        }
+
+        #bottom {
+            background-color: rgb(167, 183, 255);
+            height: 60px;
+        }
+
+        #middle-top {
+            height: 20%;
+        }
+
+        #middle-bottom {
+            height: 80%;
+        }
+
+        #middle-bottom-right {
+            float: right;
+            height: 80%;
+            width: 20%;
+            margin-top: 4%;
+            margin-right: 10%;
+            overflow: hidden;
+        }
+        #middle-bottom-centre {
+            float: left;
+            width: 20%;
+            height: 80%;
+            overflow: hidden;
+            margin-top: 4%;
+            margin-left: 10%;
+        }
+        #middle-bottom-left {
+            float: left;
+            width: 20%;
+            height: 80%;
+            overflow: hidden;
+            margin-top: 4%;
+            margin-left: 10%;
         }
     </style>
 
 </head>
 <body>
-    
-    <h1>Hin und Weg</h1>
+    <div id="top">
+        <h1>Hin und Weg</h1>
+    </div>
 
-    <form action="http://127.0.0.1:8000/detailpage/">
-        <button type="submit">Jetzt Buchen!</button>
-      </form>
+    <div id="middle">
 
+        <div id="middle-top">
+
+        </div>
+
+        <div id="middle-bottom">
+            <div id="middle-bottom-left">
+                <form action="http://127.0.0.1:8000/detailpage/">
+                    <button type="submit">Jetzt Buchen!</button>
+                </form>
+            </div>
+            <div id="middle-bottom-centre">
+                <form action="http://127.0.0.1:8000/detailpage/">
+                    <button type="submit">Jetzt Buchen!</button>
+                </form>
+            </div>
+            <div id="middle-bottom-right">
+                <form action="http://127.0.0.1:8000/detailpage/">
+                    <button type="submit">Jetzt Buchen!</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="bottom">
+        
+    </div>
 </body>
 </html>
