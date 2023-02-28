@@ -18,3 +18,9 @@ def detailpage(request):
         "object":obj
     }
     return render(request, 'detailpage.html', context)
+
+def bookingpage(request):
+    return render(request, 'bookingpage.html')
+
+def confirmationpage(request):
+    return render(request, 'confirm.html')

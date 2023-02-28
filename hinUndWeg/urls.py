@@ -17,9 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from main.views import main
 from main.views import detailpage
+from main.views import bookingpage
+from main.views import confirmationpage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('landingpage/', main),
     path('detailpage/', detailpage),
+    path('bookingpage/', bookingpage),
+    path('confirmationpage/', confirmationpage),
+    
 ]
