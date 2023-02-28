@@ -1,5 +1,13 @@
 # HinUndWeg
-Webapplikation für Vorlesung
+Webapplikation für elektrische Zweiräder
+
+Genutzte Technologien:
+Frontend: HTML + CSS
+Backend: Python
+Datenbank: MySQL
+
+Das alles wird im Framework von DJANGO genutzt.
+
 
 Für das Starten des Servers:
 
