@@ -5,8 +5,15 @@ from .models import Vehicles
 # Create your views here.
 def main(request):
     return render(request, 'landingpage.html')
+
 def detailpage(request):
-    obj = Vehicles.objects.get(id = 1)
+    if request.GET.get("Bike") == "Bike":
+        obj = Vehicles.objects.get(id = 1)
+    elif request.GET.get("Roller") == "Roller":
+        obj = Vehicles.objects.get(id = 2)
+    elif request.GET.get("Scooter") == "Scooter":
+        obj = Vehicles.objects.get(id = 3)
+
     context = {
         "object":obj
     }
