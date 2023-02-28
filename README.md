@@ -2,8 +2,8 @@
 Webapplikation für elektrische Zweiräder
 
 # Genutzte Technologien:
-Frontend: HTML + CSS
-Backend: Python
+Frontend: HTML + CSS,
+Backend: Python,
 Datenbank: MySQL
 Das alles wird im Framework von DJANGO genutzt.
 
