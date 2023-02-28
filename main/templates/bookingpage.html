@@ -1,1 +1,35 @@
-<h1>Bookingpage</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchungsseite</title>
+</head>
+<body>
+    <h1>Bookingpage</h1>
+    
+    <form>
+        <label for="vname">Vorname:
+          <input type="text" id="vname" name="vname">
+        </label>
+        <label for="zname">Nachname: 
+          <input id="zname" name="zname">
+        </label>
+        <label for="email">E-Mail-Adresse: 
+          <input id="email" name="email" input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        </label>
+        <label for="telnr">Telefonnummer: 
+          <input id="telnr" name="telnr" >
+        </label>
+      </form>
+
+      <div id="middle-bottom-left">
+        <form action="http://127.0.0.1:8000/confirmationpage/">
+            <button type="submit">Buchungbestätigen</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
