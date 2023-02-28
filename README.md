@@ -9,6 +9,11 @@ Das alles wird im Framework von DJANGO genutzt.
 
 # Vorbereitung, um Projekt zu nutzen:
 
+Installieren von Python:
+https://www.python.org/downloads/
+
+Installieren von Django:
+https://www.youtube.com/watch?v=eJdfsrvnhTE
 
 Falls MySQL Fehler Auftritt folgendem Tutorial folgen:
 https://www.youtube.com/watch?v=8l2NUwm-OIk&t=452s
