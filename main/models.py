@@ -2,10 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class Vehicles(models.Model):
-    vid = models.IntegerField(auto_created=True, primary_key=True)
-    type = models.ForeignKey()
-
 class Type(models.Model):
     BIKE = "EB"
     SCOOTER = "ES"
@@ -15,8 +11,14 @@ class Type(models.Model):
         (SCOOTER, "E-Scooter"),
         (ROLLER, "E-Roller")
     ]
-    type = models.CharField(choices=TYPE_OF_VEHICLE_CHOICES, default=BIKE)
-    
+    type = models.CharField(max_length=2, choices=TYPE_OF_VEHICLE_CHOICES, default=BIKE)
+
+class Vehicles(models.Model):
+    vid = models.IntegerField(auto_created=True, primary_key=True)
+    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+
+
+
 
 class User(models.Model):
     vName = models.CharField(max_length=30, null=False, blank=False)
