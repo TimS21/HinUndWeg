@@ -29,4 +29,20 @@ https://www.youtube.com/watch?v=8l2NUwm-OIk&t=452s
 - python manage.py runserver <-- Um den Server zu starten.
 
 
+# Nach starten des Servers:
+
+http://127.0.0.1:8000/
+
+URLs für einzelne Seiten:
+
+admin/
+
+landingpage/
+
+detailpage/
+
+bookingpage/
+
+confirmationpage/
+
 
