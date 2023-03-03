@@ -34,10 +34,15 @@ https://www.youtube.com/watch?v=8l2NUwm-OIk&t=452s
 http://127.0.0.1:8000/
 
 URLs für einzelne Seiten:
+
 admin/
+
 landingpage/
+
 detailpage/
+
 bookingpage/
+
 confirmationpage/
 
 
