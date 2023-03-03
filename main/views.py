@@ -24,12 +24,12 @@ def detailpage(request):
 
 def bookingpage(request):
     if request.method == "POST":
-        vName = request.POST["vname"]
-        nName = request.POST["nname"]
+        Vorname = request.POST["Vorname"]
+        Nachname = request.POST["Nachname"]
         eMail = request.POST["email"]
         telNr = request.POST["telnr"]
 
-        new_user = User(vname=vName, nname=nName, eMail=eMail, telNr=telNr)
+        new_user = User(Vorname=Vorname, Nachname=Nachname, eMail=eMail, telNr=telNr)
         new_user.save()
 
 

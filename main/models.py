@@ -5,9 +5,9 @@ from django.db import models
 # Create your models here.
 
 class Type(models.Model):
-    BIKE = "EB"
-    SCOOTER = "ES"
-    ROLLER = "ER"
+    BIKE = "E-Bike"
+    SCOOTER = "E-Scooter"
+    ROLLER = "E-Roller"
     TYPE_OF_VEHICLE_CHOICES = [
         (BIKE, "E-BIKE"),
         (SCOOTER, "E-Scooter"),
@@ -21,7 +21,7 @@ class Type(models.Model):
         (SP, "Scooter Price"),
         (RP, "Roller Price")
     ]
-    type = models.CharField(max_length=2, choices=TYPE_OF_VEHICLE_CHOICES, default=BIKE, primary_key=True)
+    type = models.CharField(max_length=9, choices=TYPE_OF_VEHICLE_CHOICES, default=BIKE, primary_key=True)
     price = models.CharField(max_length=2, choices=PRICE_OF_TYPE, default=BP)
     power = models.CharField(max_length=2, default="1")
     distance = models.CharField(max_length=3, default="100")
@@ -30,7 +30,7 @@ class Type(models.Model):
     Beschreibung = models.CharField(max_length=250, default="Hier steht die Beschreibung")
 
 class User(models.Model):
-    uid = models.IntegerField(primary_key=True, default=0)
+    uid = models.IntegerField(primary_key=True)
     vName = models.CharField(max_length=30, null=False, blank=False)
     nName = models.CharField(max_length=30, null=False, blank=False)
     eMail = models.EmailField(default="test@gmail.com")
