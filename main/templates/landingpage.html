@@ -18,18 +18,18 @@
             background-attachment: fixed;
         }
 
-        #top {    
+        header {    
             background-color: rgb(167, 183, 255);
-            height: 80px;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
         }
         #middle {
             background-color: rgb(216, 216, 216);
-            height: 700px;
+            height: 70%;
         }
 
         #bottom {
             background-color: rgb(167, 183, 255);
-            height: 60px;
+            height: 10%;
         }
 
         #middle-top {
@@ -47,6 +47,8 @@
             margin-top: 4%;
             margin-right: 10%;
             overflow: hidden;
+            background-color: grey;
+            background-size: cover;
         }
         #middle-bottom-centre {
             float: left;
@@ -55,6 +57,7 @@
             overflow: hidden;
             margin-top: 4%;
             margin-left: 10%;
+            background-color: grey;
         }
         #middle-bottom-left {
             float: left;
@@ -63,14 +66,16 @@
             overflow: hidden;
             margin-top: 4%;
             margin-left: 10%;
+            background-color: grey;
         }
     </style>
 
 </head>
 <body>
-    <div id="top">
-        <h1>Hin und Weg</h1>
-    </div>
+    <header>
+        <img src="/main/pictures/Hin_und_Weg_Logo.jpg">
+        <p>Hin und weg</p>
+    </header>
 
     <div id="middle">
 
@@ -93,6 +98,7 @@
                 <form method="get" action="http://127.0.0.1:8000/detailpage/">
                     <button type="submit" value="Scooter" name="Scooter">Jetzt Buchen!</button>
                 </form>
+                <p>Scooter</p>
             </div>
 
         </div>
