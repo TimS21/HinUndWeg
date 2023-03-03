@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 from .models import Vehicles
+from .models import User
+
 
 # Create your views here.
 def main(request):
@@ -20,6 +22,16 @@ def detailpage(request):
     return render(request, 'detailpage.html', context)
 
 def bookingpage(request):
+    if request.method == "POST":
+        vName = request.POST["vname"]
+        nName = request.POST["nname"]
+        eMail = request.POST["email"]
+        telNr = request.POST["telnr"]
+
+        new_user = User(vname=vName, nname=nName, eMail=eMail, telNr=telNr)
+        new_user.save()
+
+
     return render(request, 'bookingpage.html')
 
 def confirmationpage(request):
