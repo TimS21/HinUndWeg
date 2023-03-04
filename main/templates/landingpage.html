@@ -16,65 +16,102 @@
             background-size: cover;
             height: 100%;
             background-attachment: fixed;
+            margin: 0;
+            
+        }
+
+        .font {
+            text-align: center;
+            font-size: 25px;
         }
 
         header {    
-            background-color: rgb(167, 183, 255);
+            background-color: rgb(149, 168, 255);
             box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+            display: flex;
+            padding-left: 20px;
         }
+
+        button {
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+            color: rgba(0, 0, 0, 1);
+            background-color: rgb(123, 147, 255);
+             text-align: center;
+            border-radius:30px;
+            width: 120px;
+            height: 30px;
+            border: unset;
+            font-size: 17px;
+        }
+
         #middle {
             background-color: rgb(216, 216, 216);
             height: 70%;
+            
         }
 
-        #bottom {
+        footer {
             background-color: rgb(167, 183, 255);
             height: 10%;
+            bottom: 0;
+            position: absolute;
+            width: 100vw;
         }
 
         #middle-top {
             height: 20%;
+            
         }
 
         #middle-bottom {
             height: 80%;
+            
         }
 
         #middle-bottom-right {
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
             float: right;
-            height: 80%;
+            height: 500px;
             width: 20%;
             margin-top: 4%;
             margin-right: 10%;
             overflow: hidden;
-            background-color: grey;
+            background-color: rgb(166, 230, 255);
             background-size: cover;
+            display: flex;
+            border-radius: 10px;
         }
         #middle-bottom-centre {
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
             float: left;
             width: 20%;
-            height: 80%;
+            height: 500px;
             overflow: hidden;
             margin-top: 4%;
             margin-left: 10%;
-            background-color: grey;
+            background-color: rgb(166, 230, 255);
+            display: flex;
+            border-radius: 10px;
         }
         #middle-bottom-left {
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
             float: left;
             width: 20%;
-            height: 80%;
+            height: 500px;
             overflow: hidden;
             margin-top: 4%;
             margin-left: 10%;
-            background-color: grey;
+            background-color: rgb(166, 230, 255);
+            display: flex;
+            border-radius: 10px;
         }
     </style>
 
 </head>
 <body>
     <header>
-        <img src="/main/pictures/Hin_und_Weg_Logo.jpg">
-        <p>Hin und weg</p>
+        <!--<img src="/main/pictures/Hin_und_Weg_Logo.jpg">-->
+        <h1>Hin und weg</h1>
     </header>
 
     <div id="middle">
@@ -85,28 +122,29 @@
 
         <div id="middle-bottom">
             <div id="middle-bottom-left">
+                <p class="font">Fahrrad</p>
                 <form method="get" action="http://127.0.0.1:8000/detailpage/">
                     <button type="submit" value="Bike" name="Bike">Jetzt Buchen!</button>
                 </form>
             </div>
             <div id="middle-bottom-centre">
+                <p class="font">Roller</p>
                 <form method="get" action="http://127.0.0.1:8000/detailpage/">
                     <button type="submit" value="Roller" name="Roller">Jetzt Buchen!</button>
                 </form>
             </div>
             <div id="middle-bottom-right">
+                <p class="font">Scooter</p>
                 <form method="get" action="http://127.0.0.1:8000/detailpage/">
                     <button type="submit" value="Scooter" name="Scooter">Jetzt Buchen!</button>
                 </form>
-                <p>Scooter</p>
             </div>
 
         </div>
 
     </div>
 
-    <div id="bottom">
-        
-    </div>
+    <footer>
+    </footer>
 </body>
 </html>
