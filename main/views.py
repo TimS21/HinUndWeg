@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from .models import Vehicles
 from .models import User
+from .models import Type
 
 
 # Create your views here.
@@ -10,11 +11,11 @@ def main(request):
 
 def detailpage(request):
     if request.GET.get("Bike") == "Bike":
-        obj = Vehicles.objects.get(id = 1)
+        obj = Type.objects.get(weight = 25)
     elif request.GET.get("Roller") == "Roller":
-        obj = Vehicles.objects.get(id = 2)
+        obj = Type.objects.get(weight = 120)
     elif request.GET.get("Scooter") == "Scooter":
-        obj = Vehicles.objects.get(id = 3)
+        obj = Type.objects.get(weight = 15)
 
     context = {
         "object":obj
@@ -23,12 +24,12 @@ def detailpage(request):
 
 def bookingpage(request):
     if request.method == "POST":
-        vName = request.POST["vname"]
-        nName = request.POST["nname"]
+        Vorname = request.POST["Vorname"]
+        Nachname = request.POST["Nachname"]
         eMail = request.POST["email"]
         telNr = request.POST["telnr"]
 
-        new_user = User(vname=vName, nname=nName, eMail=eMail, telNr=telNr)
+        new_user = User(Vorname=Vorname, Nachname=Nachname, eMail=eMail, telNr=telNr)
         new_user.save()
 
 
