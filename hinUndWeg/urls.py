@@ -19,7 +19,7 @@ from main.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('landingpage/', main),
+    path('', main),
     path('detailpage/', detailpage),
     path('confirmationpage/', confirmationpage),
     path('bookingpage/', uploadData, name='upload'),
