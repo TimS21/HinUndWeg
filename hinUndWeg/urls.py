@@ -22,6 +22,6 @@ urlpatterns = [
     path('landingpage/', main),
     path('detailpage/', detailpage),
     path('confirmationpage/', confirmationpage),
-
-     path('bookingpage/', uploadData, name='upload')
+    path('bookingpage/', uploadData, name='upload'),
+    path('imprint/', imprint)
 ]
