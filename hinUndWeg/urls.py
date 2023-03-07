@@ -15,16 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import main
-from main.views import detailpage
-from main.views import bookingpage
-from main.views import confirmationpage
+from main.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('landingpage/', main),
     path('detailpage/', detailpage),
-    path('bookingpage/', bookingpage),
     path('confirmationpage/', confirmationpage),
-    
+
+     path('bookingpage/', uploadData, name='upload')
 ]

@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from hinUndWeg.forms import *
 
 from .models import Vehicles
 from .models import User
@@ -23,17 +25,16 @@ def detailpage(request):
     return render(request, 'detailpage.html', context)
 
 def bookingpage(request):
-    if request.method == "POST":
-        Vorname = request.POST["Vorname"]
-        Nachname = request.POST["Nachname"]
-        eMail = request.POST["email"]
-        telNr = request.POST["telnr"]
-
-        new_user = User(Vorname=Vorname, Nachname=Nachname, eMail=eMail, telNr=telNr)
-        new_user.save()
-
-
     return render(request, 'bookingpage.html')
 
 def confirmationpage(request):
     return render(request, 'confirm.html')
+
+def uploadData(request):
+    if request.POST:
+        form = UploadForm(request.POST, request.FILES)
+        print(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(confirmationpage)
+    return render(request, 'bookingpage.html', {'form' : UploadForm})

@@ -53,7 +53,13 @@
     <h1>Hin und Weg</h1>
   </header>
     <div>
-      <form>
+      <form method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button>Submit</button>
+      </form>
+      <!--
+     <form>
           <label for="Vorname">Vorname:
             <input id="Vorname" placeholder="Vorname" name="Vorname">
           </label>
@@ -72,12 +78,12 @@
           <form method="POST" action="http://127.0.0.1:8000/confirmationpage/">
               <button type="submit">Buchungbestätigen</button>
           </form>
-      </div>
-  </div>
+        </div>
+      -->
+    </div>
     <footer>
 
     </footer>
 
 </body>
 </html>
-
