@@ -2,9 +2,7 @@ from django.shortcuts import redirect, render
 
 from hinUndWeg.forms import *
 
-from .models import Vehicles
-from .models import User
-from .models import Type
+from .models import *
 
 
 # Create your views here.
