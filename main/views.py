@@ -38,3 +38,7 @@ def uploadData(request):
             form.save()
             return redirect(confirmationpage)
     return render(request, 'bookingpage.html', {'form' : UploadForm})
+
+def imprint(request):
+    return render(request, 'imprint.html')
+
