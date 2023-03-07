@@ -37,3 +37,5 @@ def bookingpage(request):
 
 def confirmationpage(request):
     return render(request, 'confirm.html')
+def imprint(request):
+    return render(request, 'imprint.html')

@@ -19,6 +19,7 @@ from main.views import main
 from main.views import detailpage
 from main.views import bookingpage
 from main.views import confirmationpage
+from main.views import imprint
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +27,6 @@ urlpatterns = [
     path('detailpage/', detailpage),
     path('bookingpage/', bookingpage),
     path('confirmationpage/', confirmationpage),
+    path('imprint/', imprint),
     
 ]
