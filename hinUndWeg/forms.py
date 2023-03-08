@@ -3,10 +3,10 @@ from django import forms
 from main.models import User
 
 class UploadForm(ModelForm):
-    vName = forms.TextInput()
-    nName = forms.TextInput()
-    eMail = forms.EmailInput()
+    Vorname = forms.TextInput()
+    Nachname = forms.TextInput()
+    EMailAdresse = forms.EmailInput()
     telNr = forms.IntegerField()
     class Meta:
         model = User
-        fields = ['vName', 'nName', 'eMail', 'telNr']
+        fields = ['Vorname', 'Nachname', 'EMailAdresse', 'telNr']

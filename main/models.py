@@ -31,9 +31,9 @@ class Type(models.Model):
 
 class User(models.Model):
     uid = models.IntegerField(primary_key=True)
-    vName = models.CharField(max_length=30, null=False, blank=False)
-    nName = models.CharField(max_length=30, null=False, blank=False)
-    eMail = models.EmailField(default="test@gmail.com")
+    Vorname = models.CharField(max_length=30, null=False, blank=False)
+    Nachname = models.CharField(max_length=30, null=False, blank=False)
+    EMailAdresse = models.EmailField(default="test@gmail.com")
     telNr = models.IntegerField(default=1234)
 
 class Vehicles(models.Model):
