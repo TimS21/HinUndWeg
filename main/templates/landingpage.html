@@ -138,7 +138,7 @@
 </head>
 <body>
     <header>
-        <!--<img src="/main/pictures/Hin_und_Weg_Logo.jpg">-->
+        <!--<img src="{% static 'images/Hin_und_Weg_Logo.jpg'%}">-->
         <h1>Hin und Weg</h1>
         <span class="material-symbols-outlined">
             login
@@ -154,6 +154,7 @@
         <div id="middle-bottom">
             <div id="middle-bottom-left">
                 <p class="font">Fahrrad</p>
+                    <img src="{% static 'images/e-Bike.jpg'%}">
                 <form method="get" action="http://127.0.0.1:8000/detailpage/">
                     <button type="submit" value="Bike" name="Bike">Jetzt Buchen!</button>
                 </form>
@@ -167,6 +168,7 @@
             </div>
             <div id="middle-bottom-right">
                 <p class="font">Scooter</p>
+                <img src="{% static 'images/E-Scooter.jpg'%}">
                 <form method="get" action="http://127.0.0.1:8000/detailpage/">
                     <button type="submit" value="Scooter" name="Scooter">Jetzt Buchen!</button>
                 </form>
