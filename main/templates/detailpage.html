@@ -1,3 +1,4 @@
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +86,7 @@
 </head>
 <body>
     <header>
-        <h1>Hin und Weg</h1>
+        <img src="{% static 'images/Logo.PNG'%}" width="100" height="100">
         <span class="material-symbols-outlined">
             login
             </span>
@@ -100,10 +101,10 @@
         <p class="font">So viel kostet es am Tag: {{object.price}}</p> 
 
         <p class="font">Standort: {{object.Standort}}
-        <select>
-            <option>DHBW-Mannheim</option>
-            <option>Hauptbahnhof Mannheim</option>
-            <option>Wasserturm Mannheim</option>
+        <select >
+            <option method="ORT" value="DHBW">DHBW-Mannheim</option>
+            <option method="ORT" value="HBF">Hauptbahnhof Mannheim</option>
+            <option method="ORT" value="WTM">Wasserturm Mannheim</option>
           </select>
         </p>
 
