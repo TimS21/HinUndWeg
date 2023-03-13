@@ -70,6 +70,7 @@
             background-color: white;
             color: rgb(149, 168, 255);
         }
+        
         .font {
             top: 4%;
             left: 5%;
@@ -88,6 +89,23 @@
         }
         .logo{
             cursor: pointer;
+        }
+        .dropdown{
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+            color: rgba(0, 0, 0, 1);
+            background-color: rgb(123, 147, 255);
+            border-radius:30px;
+            width: 250px;
+            height: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            border: 2px;
+            border-color: black;
+        }
+        .dropdown:hover{
+            background-color: white;
+            color: rgb(149, 168, 255);
         }
     </style>
 </head>
@@ -110,7 +128,7 @@
         <p class="font">So viel kostet es am Tag: {{object.price}}</p> 
 
         <p class="font">Standort: {{object.Standort}}
-        <select >
+        <select class="dropdown">
             <option method="ORT" value="DHBW">DHBW-Mannheim</option>
             <option method="ORT" value="HBF">Hauptbahnhof Mannheim</option>
             <option method="ORT" value="WTM">Wasserturm Mannheim</option>
