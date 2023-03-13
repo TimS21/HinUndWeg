@@ -34,9 +34,21 @@ def uploadData(request):
         print(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(confirmationpage)
+            return redirect(overview)
     return render(request, 'bookingpage.html', {'form' : UploadForm})
 
 def imprint(request):
     return render(request, 'imprint.html')
+
+def overview(request):
+    if request.GET.ORT("DHBW") == "DHBW":
+        obj = Vehicles.objects.get(standort = "DHBW")
+    elif request.GET.ORT("HBF") == "HBF":
+        obj = Vehicles.objects.get(standort = "Bahnhof")
+    elif request.GET.ORT("WTM") == "WTM":
+        obj = Vehicles.objects.get(standort = "Wasserturm")
+    context = {
+        "object":obj
+    }
+    return render(request, 'overview.html', context)
 
