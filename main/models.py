@@ -37,8 +37,17 @@ class User(models.Model):
     telNr = models.IntegerField(default=1234)
 
 class Vehicles(models.Model):
-    vid = models.IntegerField(primary_key=True, default=0)
+    vid = models.IntegerField(primary_key=True)
     type = models.ForeignKey(Type, on_delete=models.CASCADE, default="1")
+    DHBW = "DHBW-Mannheim"
+    Bahnhof = "Hauptbahnhof Mannheim"
+    Wasserturm = "Wasserturm Mannheim"
+    TYPE_OF_STANDORT = [
+        (DHBW, "DHBW-Mannheim"),
+        (Bahnhof, "Hauptbahnhof Mannheim"),
+        (Wasserturm, "Wasserturm Mannheim")
+    ]
+    standort = models.CharField(max_length=21, choices=TYPE_OF_STANDORT, default=DHBW, null=False)
 
 class Buchungstabelle(models.Model):
     bid = models.IntegerField(primary_key=True, default=0)

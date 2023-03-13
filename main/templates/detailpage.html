@@ -99,6 +99,14 @@
         <p class="font">PS des Fahrzeugs: {{object.power}}</p>
         <p class="font">So viel kostet es am Tag: {{object.price}}</p> 
 
+        <p class="font">Standort: {{object.Standort}}
+        <select>
+            <option>DHBW-Mannheim</option>
+            <option>Hauptbahnhof Mannheim</option>
+            <option>Wasserturm Mannheim</option>
+          </select>
+        </p>
+
         <div id="middle-bottom-centre">
             <form action="http://127.0.0.1:8000/bookingpage/">
                 <button type="submit">Jetzt Buchen!</button>
