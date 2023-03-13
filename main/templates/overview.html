@@ -72,10 +72,15 @@
             background-color: white;
             color: rgb(149, 168, 255);
         }
+        .logo{
+            cursor: pointer;
+        }
   </style>
 <body>
     <header>
-        <img src="{% static 'images/Logo.PNG'%}" width="100" height="100">
+        <a href="http://127.0.0.1:8000/">
+            <img class="logo" src="{% static 'images/Logo.PNG'%}" width="100" height="100">
+            </a>
         <span class="material-symbols-outlined">
             Login
             </span>
