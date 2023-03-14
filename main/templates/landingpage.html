@@ -39,22 +39,27 @@
         }
 
         button {
-            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
-            color: rgba(0, 0, 0, 1);
-            background-color: rgb(149, 168, 255);
-            border-radius:30px;
-            width: 120px;
-            height: 30px;
-            font-size: 17px;
-            position: absolute;
-            bottom: 50px;
-            left: 30%;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+            float: left;
+            height: 75%;
+            width: 25%;
+            overflow: hidden;
+            margin-left: 7%;
+            margin-bottom: 4%;
+            display: flex;
+            border-radius: 10px;
+            border-color: black;
+            border-width: 2px;
+            border-style: solid;
+            position: relative;
             cursor: pointer;
             transition-duration: 0.4s;
-        }
-        button:hover{
             background-color: white;
-            color: rgb(149, 168, 255);
+            justify-content: center;
+        }
+        button:hover {
+            height: 76%;
+            width: 26%;
         }
 
         #middle {
@@ -99,6 +104,7 @@
             border-style: solid;
             position: relative;
             justify-content: center;
+            cursor: pointer;
         }
         #middle-bottom-centre {
             box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
@@ -114,6 +120,7 @@
             border-width: 2px;
             border-style: solid;
             position: relative;
+            cursor: pointer;
         }
         #middle-bottom-left {
             box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
@@ -129,6 +136,12 @@
             border-width: 2px;
             border-style: solid;
             position: relative;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+        #middle-bottom-left:hover {
+            height: 76%;
+            width: 21%;
         }
         .material-symbols-outlined {
             padding-left: 80%;
@@ -174,24 +187,24 @@
             min="2018-01-01" max="2018-12-31">
         </div>
 
-            <div id="middle-bottom-left">
-                <img src="{% static 'images/e-Bike.jpg'%}">
+            <form method="get" action="http://127.0.0.1:8000/detailpage/">
+                <button type="submit" value="Bike" name="Bike">
+                    <img src="{% static 'images/e-Bike.jpg'%}" width="450" height="450">
+                </button>
+            </form>
                 <form method="get" action="http://127.0.0.1:8000/detailpage/">
-                    <button type="submit" value="Bike" name="Bike">Jetzt Buchen!</button>
+                    <button type="submit" value="Roller" name="Roller">                    
+                        <img src="{% static 'images/E-Roller.jpg'%}" width="450" height="450">
+                    </button>
                 </form>
-            </div>
-            <div id="middle-bottom-centre">
-                    <img src="{% static 'images/E-Roller.jpg'%}">
+
+                
                 <form method="get" action="http://127.0.0.1:8000/detailpage/">
-                    <button type="submit" value="Roller" name="Roller">Jetzt Buchen!</button>
+                    <button type="submit" value="Scooter" name="Scooter">
+                        <img src="{% static 'images/E-Scooter.jpg'%}" width="450" height="450">
+                    </button>
                 </form>
-            </div>
-            <div id="middle-bottom-right">
-                <img src="{% static 'images/E-Scooter.jpg'%}">
-                <form method="get" action="http://127.0.0.1:8000/detailpage/">
-                    <button type="submit" value="Scooter" name="Scooter">Jetzt Buchen!</button>
-                </form>
-            </div>
+
 
     </div>
 
