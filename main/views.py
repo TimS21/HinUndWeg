@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.http import HttpResponse
 
 from hinUndWeg.forms import *
 
@@ -10,6 +11,8 @@ def main(request):
     return render(request, 'landingpage.html')
 
 def detailpage(request):
+    bezeichnungen = Location.objects.all
+
     if request.GET.get("Bike") == "Bike":
         obj = Type.objects.get(weight = 25)
     elif request.GET.get("Roller") == "Roller":
@@ -18,9 +21,11 @@ def detailpage(request):
         obj = Type.objects.get(weight = 15)
 
     context = {
-        "object":obj
+        "object":obj,
+        "bez":bezeichnungen
     }
     return render(request, 'detailpage.html', context)
+
 
 def bookingpage(request):
     return render(request, 'bookingpage.html')
@@ -41,14 +46,7 @@ def imprint(request):
     return render(request, 'imprint.html')
 
 def overview(request):
-    if request.GET.ORT("DHBW") == "DHBW":
-        obj = Vehicles.objects.get(standort = "DHBW")
-    elif request.GET.ORT("HBF") == "HBF":
-        obj = Vehicles.objects.get(standort = "Bahnhof")
-    elif request.GET.ORT("WTM") == "WTM":
-        obj = Vehicles.objects.get(standort = "Wasserturm")
-    context = {
-        "object":obj
-    }
-    return render(request, 'overview.html', context)
+    return render(request, 'overview.html')
+
+    
 

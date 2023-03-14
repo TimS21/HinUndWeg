@@ -29,6 +29,9 @@ class Type(models.Model):
     wheelsize = models.CharField(max_length=2, default="24")
     Beschreibung = models.CharField(max_length=250, default="Hier steht die Beschreibung")
 
+    def __str__(self):
+        return self.type
+
 class User(models.Model):
     uid = models.IntegerField(primary_key=True)
     Vorname = models.CharField(max_length=30, null=False, blank=False)
@@ -36,22 +39,37 @@ class User(models.Model):
     EMailAdresse = models.EmailField(default="test@gmail.com")
     telNr = models.IntegerField(default=1234)
 
+    def __str__(self):
+        return self.Vorname + ' ' + self.Nachname
+
+
+class Location(models.Model):
+    lid = models.IntegerField(primary_key=True)
+    bezeichnung = models.CharField(max_length=21)
+    strasse = models.CharField(max_length=50)
+    nummer = models.IntegerField(null=False)
+    plz = models.IntegerField()
+    ort = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.bezeichnung
+
+
 class Vehicles(models.Model):
     vid = models.IntegerField(primary_key=True)
     type = models.ForeignKey(Type, on_delete=models.CASCADE, default="1")
-    DHBW = "DHBW-Mannheim"
-    Bahnhof = "Hauptbahnhof Mannheim"
-    Wasserturm = "Wasserturm Mannheim"
-    TYPE_OF_STANDORT = [
-        (DHBW, "DHBW-Mannheim"),
-        (Bahnhof, "Hauptbahnhof Mannheim"),
-        (Wasserturm, "Wasserturm Mannheim")
-    ]
-    standort = models.CharField(max_length=21, choices=TYPE_OF_STANDORT, default=DHBW, null=False)
+    lid = models.ForeignKey(Location, on_delete=models.CASCADE, default="1")
 
+    def __str__(self):
+        return self.vid + ' ' + self.type
+    
+    
 class Buchungstabelle(models.Model):
     bid = models.IntegerField(primary_key=True, default=0)
     vid = models.ForeignKey(Vehicles, on_delete=models.CASCADE)
     uid = models.ForeignKey(User, on_delete=models.CASCADE)
     tstart = models.IntegerField(default=1)
     tend = models.IntegerField(default=2)
+
+    def __str__(self):
+        return 'Buchungsnummer: ' + self.bid
