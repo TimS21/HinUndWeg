@@ -110,6 +110,7 @@
     </style>
 </head>
 <body>
+    
     <header>
         <a href="http://127.0.0.1:8000/">
         <img class="logo" src="{% static 'images/Logo.PNG'%}" width="100" height="100">
@@ -123,23 +124,26 @@
         <div id="info-card">
         <p class="font">Das ist der Name: {{object.type}}</p>
         <p class="font">Mögliche Distanz mit vollem Akku: {{object.distance}}km</p>
-        <p class="font">Gewicht des Fahrzeugs: {{object.weight}}kg</p>
-        <p class="font">PS des Fahrzeugs: {{object.power}}</p>
+        <p class="font">Gewicht des {{object.type}}: {{object.weight}}kg</p>
+        <p class="font">PS des {{object.type}}: {{object.power}}</p>
         <p class="font">So viel kostet es am Tag: {{object.price}}</p> 
+            <p class="font">Standort: {{object.Standort}}
+                <select class="dropdown" name="Location">
+                    <option disabled="true" selected>Standort auswählen</option>
+                    {% for item in bez %}
+                    <option method="ORT">{{ item }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+        
+            
 
-        <p class="font">Standort: {{object.Standort}}
-        <select class="dropdown">
-            <option method="ORT" value="DHBW">DHBW-Mannheim</option>
-            <option method="ORT" value="HBF">Hauptbahnhof Mannheim</option>
-            <option method="ORT" value="WTM">Wasserturm Mannheim</option>
-          </select>
-        </p>
 
-        <div id="middle-bottom-centre">
-            <form action="http://127.0.0.1:8000/bookingpage/">
-                <button type="submit">Jetzt Buchen!</button>
-            </form>
-        </div>
+            <div id="middle-bottom-centre">
+                <form action="http://127.0.0.1:8000/bookingpage/">
+                    <button type="submit">Jetzt Buchen!</button>
+                </form>
+            </div>
         </div>
     </div>
     <footer>
