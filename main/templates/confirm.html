@@ -17,8 +17,10 @@
             font-family: 'Lato', sans-serif;
             background-size: cover;
             height: 100%;
+            width: 100%;
             background-attachment: fixed;
             margin: 0;
+            position: absolute;
         }
         header {    
             background-color: rgb(149, 168, 255);
@@ -44,14 +46,15 @@
             color: rgba(0, 0, 0, 1);
             background-color: rgb(123, 147, 255);
             border-radius:30px;
-            width: 120px;
-            height: 30px;
+            width: 200px;
+            height: 50px;
             font-size: 17px;
             position: relative;
-            left: 20%;
-            bottom: 10px;
+            left: 37%;
             cursor: pointer;
             transition-duration: 0.4s;
+            position: absolute;
+            bottom: 15%;
         }
         button:hover{
             background-color: white;
@@ -62,6 +65,34 @@
             position: absolute;
             margin: 2%;
         }
+        #card{
+          height: 60%;
+          width: 50%;
+          left: 21%;
+          background-color: rgb(166, 230, 255);
+            margin: 4%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+            position: relative;
+            justify-content: center;
+        }
+        .font{
+            left: 42%;
+            position: relative;
+        }
+        .font2{
+            top: 5%;
+            font-size: large;
+            left: 25%;
+            position: relative;
+        }
+        .font3{
+            top: 5%;
+            font-size: large;
+            left: 32%;
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -71,15 +102,16 @@
           </a>
       </header>
       <div id="middle">
-    <h1>Confirm</h1>
-    <p>Sie haben die Buchung erfolgreich abgeschlossen!</p>
-    <p>Sie können die Seite jetzt verlassen!</p>
-
+        <div id="card">
+            <h1 class="font">Confirm</h1>
+            <p class="font2">Sie haben die Buchung erfolgreich abgeschlossen!</p>
+            <p class="font3">Sie können die Seite jetzt verlassen!</p>
     <div>
         <form action="http://127.0.0.1:8000">
             <button type="submit">Neue Buchung beginnen</button>
         </form>
     </div>
+</div>
     </div>
     <footer>
         <a id="f-text" href="http://127.0.0.1:8000/imprint/">Über uns</a>
