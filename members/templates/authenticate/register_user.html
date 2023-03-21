@@ -1,0 +1,28 @@
+{% load static %}
+
+<header>
+    <a href="http://127.0.0.1:8000/">
+        <img class="logo" src="{% static 'images/Logo.PNG'%}" width="100" height="100">
+        </a>
+</header>
+
+{% if form.errors %}
+
+<p>Es gab einen Fehler bei der Registrierung. Bitte überprüfe deine Eingaben.</p>
+ 
+{% endif %}
+
+
+<h1>Register</h1>
+</br>
+
+<form action="{% url 'register_user' %}" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+</br></br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      
+
+</form>

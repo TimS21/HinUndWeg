@@ -7,10 +7,10 @@
 </header>
 
 
-<h1>login</h1>
+<h1>Login</h1>
 <br/>
 
-<form action="" method="POST">
+<br action="" method="POST">
     {% csrf_token %}
 
     <div class="container">
@@ -32,6 +32,11 @@
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control" name="password">
         </div>
+        Bisher kein Account? Klick 
+        <a class="material-symbols-outlined" href="{% url 'register_user' %}">
+            hier
+        </a>
+    </br>
         <button type="submit" class="btn btn-primary">Submit</button>
       
 
