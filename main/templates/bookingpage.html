@@ -136,7 +136,14 @@
         <form id="data" method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
           <div id="label">
             {% csrf_token %}
+            {% if user.is_authenticated%}
+            {{user.first_name}}<br>
+            {{user.last_name}}<br>
+            {{user.email}}<br>
+
+            {% else %}
             {{form}}
+            {% endif %}
           </div>
           <div id="position-button">
           <button>Bestätigen</button>
