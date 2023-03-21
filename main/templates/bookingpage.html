@@ -107,6 +107,12 @@
         #position-button{
           position: relative;
         }
+        h3{
+            left: 5%;
+            top: 4%;
+            position: absolute;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -125,6 +131,7 @@
   {% endif %}
   </header>
       <div id="card" class="mb-3 row">
+        <h3>Personendaten:</h3>
         <div id="inner-card">
         <form id="data" method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
           <div id="label">
