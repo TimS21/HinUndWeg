@@ -54,8 +54,8 @@
             font-size: 17px;
             cursor: pointer;
             transition-duration: 0.4s;
-            bottom: 10%;
-            right: 10%;
+            bottom: 0;
+            right: 0;
             position: absolute;
         }
         button:hover{
@@ -77,14 +77,20 @@
             position: absolute;
             margin: 2%;
         }
-        #card{
-          height: 40%;
-          background-color: rgb(166, 230, 255);
+        #card {
+          height: 55%;
+          width: 40%;
+            background-color: rgb(166, 230, 255);
             margin: 4%;
             border-radius: 10px;
-            overflow: hidden;
             box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
             position: relative;
+        }
+        #inner-card {
+          margin: 1%;
+            background-color: rgb(166, 230, 255);
+            position: relative;
+            width: 80%;
         }
         #data{
           position: relative;
@@ -93,6 +99,13 @@
         }
         .logo{
             cursor: pointer;
+        }
+        #label{
+          margin: 10%;
+          position: relative;
+        }
+        #position-button{
+          position: relative;
         }
     </style>
 </head>
@@ -112,11 +125,18 @@
   {% endif %}
   </header>
       <div id="card" class="mb-3 row">
+        <div id="inner-card">
         <form id="data" method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
-          {% csrf_token %}
-          {{form}}
+          <div id="label">
+            {% csrf_token %}
+            {{form}}
+          </div>
+          <div id="position-button">
           <button>Bestätigen</button>
+        </div>
         </form>
+        
+      </div>
       </div>
     <footer>
       <a id="f-text" href="http://127.0.0.1:8000/imprint/">Über uns</a>
