@@ -27,7 +27,7 @@ urlpatterns = [
     path('detailpage/', detailpage),
     path('confirmationpage/', confirmationpage),
     path('bookingpage/', uploadData, name='upload'),
-    path('imprint/', imprint),
+    path('imprint/', imprint, name="imprint"),
     path('overview/', overview)
 ]
 

@@ -47,7 +47,15 @@ def uploadData(request):
     return render(request, 'bookingpage.html', {'form' : UploadForm})
 
 def imprint(request):
-    return render(request, 'imprint.html')
+    if request.method == "POST":
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message = request.POST['message']
+
+        return render(request, 'imprint.html', {'message_name': message_name})
+
+    else:
+        return render(request, 'imprint.html', {})
 
 def overview(request):
     return render(request, 'overview.html')
