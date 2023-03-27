@@ -15,13 +15,17 @@ def detailpage(request):
 
     if request.GET.get("Bike") == "Bike":
         obj = Type.objects.get(weight = 25)
+        img = 1
     elif request.GET.get("Roller") == "Roller":
         obj = Type.objects.get(weight = 120)
+        img = 2
     elif request.GET.get("Scooter") == "Scooter":
         obj = Type.objects.get(weight = 15)
+        img = 3
 
     context = {
         "object":obj,
+        "image":img,
         "bez":bezeichnungen
     }
     return render(request, 'detailpage.html', context)

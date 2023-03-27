@@ -132,25 +132,28 @@
   </header>
       <div id="card" class="mb-3 row">
         <h3>Personendaten:</h3>
-        <div id="inner-card">
-        <form id="data" method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
-          <div id="label">
-            {% csrf_token %}
+          <div id="inner-card">
             {% if user.is_authenticated%}
-            {{user.first_name}}<br>
-            {{user.last_name}}<br>
-            {{user.email}}<br>
-
+            <div id="label">
+              {% csrf_token %}
+              <p>Sie sind eingeloggt, daher werden folgende Daten für die Buchung übernommen: </p>
+              <p>Vorname: {{user.first_name}}<br></p>
+              <p>Nachname: {{user.last_name}}<br></p>
+              <p>E-Mail-Adresse: {{user.email}}<br></p>
+            </div>
             {% else %}
-            {{form}}
-            {% endif %}
+            <form id="data" method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
+              <div id="label">
+                {{form}}
+              </div>
+              {% endif %}
+                <div id="position-button">
+                  <form action="http://127.0.0.1:8000/overview/">
+                    <button>Bestätigen</button>
+                  </form>
+                </div>
+            </form>
           </div>
-          <div id="position-button">
-          <button>Bestätigen</button>
-        </div>
-        </form>
-        
-      </div>
       </div>
     <footer>
       <a id="f-text" href="http://127.0.0.1:8000/imprint/">Über uns</a>

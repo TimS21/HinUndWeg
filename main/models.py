@@ -28,6 +28,7 @@ class Type(models.Model):
     weight = models.CharField(max_length=3, default="10")
     wheelsize = models.CharField(max_length=2, default="24")
     Beschreibung = models.CharField(max_length=250, default="Hier steht die Beschreibung")
+    image = models.ImageField (upload_to='main\static\images\detailpage', default="e-Bike.jpg")
 
     def __str__(self):
         return self.type

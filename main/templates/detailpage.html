@@ -125,11 +125,11 @@
     </header>
     <div id="middle">
         <div id="info-card">
-        <p class="font">Das ist der Name: {{object.type}}</p>
-        <p class="font">Mögliche Distanz mit vollem Akku: {{object.distance}}km</p>
-        <p class="font">Gewicht des {{object.type}}: {{object.weight}}kg</p>
-        <p class="font">PS des {{object.type}}: {{object.power}}</p>
-        <p class="font">So viel kostet es am Tag: {{object.price}}</p> 
+            <p class="font">Das ist der Name: {{object.type}}</p>
+            <p class="font">Mögliche Distanz mit vollem Akku: {{object.distance}}km</p>
+            <p class="font">Gewicht des {{object.type}}: {{object.weight}}kg</p>
+            <p class="font">PS des {{object.type}}: {{object.power}}</p>
+            <p class="font">So viel kostet es am Tag: {{object.price}}</p> 
             <p class="font">Standort: {{object.Standort}}
                 <select class="dropdown" name="Location">
                     <!--<option disabled="true" selected>Standort auswählen</option>-->
@@ -138,10 +138,18 @@
                     {% endfor %}
                 </select>
             </p>
-        
-            
+            <div>
 
-
+                {% if image == 1%}
+                    <img src="{% static 'images\detailpage\e-Bike.jpg'%}"width="400" height="400">
+                {% endif %}
+                {% if image == 2%}
+                    <img src="{% static 'images\detailpage\E-Roller.jpg'%}"width="400" height="400">
+                {% endif %}
+                {% if image == 3%}
+                    <img src="{% static 'images\detailpage\E-Scooter.jpg'%}"width="400" height="400">
+                {% endif %}
+            </div>
             <div id="middle-bottom-centre">
                 <form action="http://127.0.0.1:8000/bookingpage/">
                     <button>Jetzt Buchen!</button>
@@ -149,6 +157,7 @@
             </div>
         </div>
     </div>
+   
     <footer>
         <a id="f-text" href="http://127.0.0.1:8000/imprint/">Über uns</a>
     </footer>
