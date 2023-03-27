@@ -144,6 +144,7 @@
             {% else %}
             <form id="data" method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">
               <div id="label">
+                {% csrf_token %}
                 {{form}}
               </div>
               {% endif %}
