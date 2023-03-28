@@ -29,7 +29,7 @@ https://www.youtube.com/watch?v=8l2NUwm-OIk&t=452s
 - python manage.py runserver <-- Um den Server zu starten.
 
 
-- python -m smtpd -n -c DebbuggingServer localhost:1025 <-- für den EMail Server
+- python -m smtpd -n -c DebuggingServer localhost:1025 <-- für den EMail Server
 
 
 # Nach starten des Servers:
