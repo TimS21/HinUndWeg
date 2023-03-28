@@ -95,6 +95,12 @@
             </a>
         {% endif %}
     </header>
+    {% if message_name %}
+    <center>
+        <h2>Danke {{ message_name}}</h2>
+        <p>Wir haben deine Nachricht erhalten und kümmern uns in kürze um deine Anfrage.</p>
+    </center>
+    {% endif %}
     <div id="middle">
         <div id="card">
             <h1 style="text-align: center; top: 2%; position: relative;">Hin und Weg AG</h1>
