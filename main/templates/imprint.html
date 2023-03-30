@@ -41,11 +41,12 @@
   #card{
     position: relative;
     background-color: rgb(166, 230, 255);
-    margin: 5%;
+    margin: 3%;
+    margin-bottom: 7%;
     border-radius: 10px;
     height: 450px;
     width: 60%;
-    left: 15%;
+    left: 17%;
   }
   .material-symbols-outlined {
             padding-left: 80%;
@@ -66,16 +67,58 @@
             top: 15%;
         }
         #p1{
-            left: 5%;
-            top: 26%;
-            position: relative;
             font-size: large;
         }
         #p2{
-            left: 17%;
-            top: 0%;
-            position: relative;
             font-size: large;
+        }
+        #p-box{
+            position: relative;
+            top: 5%;
+            left: 5%;
+            width: 50%;
+        }
+        #p1-box{
+            width: 30%;
+            float: left;
+        }
+        #p2-box{
+            width: 50%;
+            float: right;
+            margin-right: 20%;
+        }
+        #contact-box{
+            position: absolute;
+            left: 5%;
+            bottom: 10%;
+        }
+        button {
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+            color: rgba(0, 0, 0, 1);
+            background-color: rgb(123, 147, 255);
+            border-radius:30px;
+            width: 160px;
+            height: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            margin-top: 2%;
+        }
+        button:hover{
+            background-color: white;
+            color: rgb(149, 168, 255);
+        }
+        #message-field{
+            background-color: rgb(242, 251, 151);
+            border-radius: 10px;
+            width: 60%;
+            border-color: black;
+            border-width: 2px;
+            position: relative;
+            margin: 1%;
+            border-style: solid;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+            left: 19%;
         }
   </style>
 </head>
@@ -96,28 +139,37 @@
         {% endif %}
     </header>
     {% if message_name %}
+    <div id="message-field">
     <center>
         <h2>Danke {{ message_name}}</h2>
         <p>Wir haben deine Nachricht erhalten und kümmern uns in kürze um deine Anfrage.</p>
     </center>
+    </div>
     {% endif %}
     <div id="middle">
         <div id="card">
             <h1 style="text-align: center; top: 2%; position: relative;">Hin und Weg AG</h1>
+            <div id="p-box">
+            <div id="p1-box">
             <p id="p1">Vorstand:</p> 
             <p id="p1">E-Mail:</p> 
             <p id="p1">Telefon:</p> 
+            </div>
+            <div id="p2-box">
             <p id="p2">Herr Preiser</p>
             <p id="p2">HinundWeg@gmail.com</p>
             <p id="p2">0000 477771</p>
+            </div>
+            </div>
             <form action="{%url 'imprint'%}" method="post">
                 {% csrf_token %}
+                <div id="contact-box">
                 <h2>Kontaktieren Sie Uns</h2>
-                <input type="text" name="message-name" placeholder="Ihr Name">
-                <input type="email" name="message-email" placeholder="Ihre E-Mail-Adresse"><br><br>
-                <textarea name="message" placeholder="Ihre Nachricht" rows="3" cols="40"></textarea><br>
+                <input type="text" name="message-name" placeholder="Ihr Name" style="border-radius: 5px;  border: 0;">
+                <input type="email" name="message-email" placeholder="Ihre E-Mail-Adresse" style="border-radius: 5px; border: 0;"><br><br>
+                <textarea name="message" placeholder="Ihre Nachricht" rows="3" cols="40" style="border-radius: 5px; border: 0;"></textarea><br>
                 <button>Nachticht senden</button>
-               
+            </div>
 
             </form>
             <div id="window">
