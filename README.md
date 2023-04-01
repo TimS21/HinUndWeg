@@ -30,6 +30,12 @@ https://www.youtube.com/watch?v=8l2NUwm-OIk&t=452s
 
 
 
+# Für die Mailabfrage
+Die Anfragen aus dem Kontaktformular können hier eingesehen werden:
+https://mailtrap.io
+
+
+
 
 # Nach starten des Servers:
 
