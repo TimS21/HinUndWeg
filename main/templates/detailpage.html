@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- Datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
 
     <style>
         body {
@@ -66,7 +72,7 @@
             font-size: 17px;
             position: absolute;
             left: 20%;
-            bottom: 20%;
+            bottom: 10%;
             cursor: pointer;
             transition-duration: 0.4s;
         }
@@ -107,6 +113,7 @@
             cursor: pointer;
             transition-duration: 0.4s;
             border: 2px;
+            text-align: center;
             border-color: black;
         }
         #picture-box {
@@ -123,6 +130,23 @@
             position: absolute;
             right: 11%;
             top: 45%;
+        }
+        .timepicker{
+            top: 4%;
+            left: 5%;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+            color: rgb(4, 50, 255);
+            background-color: white;
+            border-radius:30px;
+            width: 100px;
+            height: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            border: 2px;
+            border-color: black;
+            position: relative;
+            text-align: center;
         }
     </style>
 </head>
@@ -158,7 +182,11 @@
                     {% endfor %}
                 </select>
             </p>
-            <div id="picture-box">
+            <p class="font">Von: <input class="timepicker" type="text" name="Date" id="Datepicker"> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Bis: <input class="timepicker" type="text" name="Date2" id="sdate"> 
+            <div id="picture-box"></p>
+                
 
                 {% if image == 1%}
                     <img src="{% static 'images\detailpage\e-Bike.jpg'%}"width="390" height="380">
@@ -177,6 +205,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(function () {
+          $("#Datepicker").datepicker();
+        });
+        $(function () {
+          $("#sdate").datepicker();
+        });
+      </script>
    
     <footer>
         <a id="f-text" href="http://127.0.0.1:8000/imprint/">Über uns</a>
