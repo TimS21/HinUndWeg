@@ -13,9 +13,9 @@ class Type(models.Model):
         (SCOOTER, "E-Scooter"),
         (ROLLER, "E-Roller")
     ]
-    BP = "10"
-    SP = "10"
-    RP = "15"
+    BP = "9"
+    SP = "6"
+    RP = "18"
     PRICE_OF_TYPE = [
         (BP, "Bike Price"),
         (SP, "Scooter Price"),
@@ -27,7 +27,7 @@ class Type(models.Model):
     distance = models.CharField(max_length=3, default="100")
     weight = models.CharField(max_length=3, default="10")
     wheelsize = models.CharField(max_length=2, default="24")
-    Beschreibung = models.CharField(max_length=250, default="Hier steht die Beschreibung")
+    Beschreibung = models.TextField(default="Hier steht die Beschreibung")
     image = models.ImageField (upload_to='main\static\images\detailpage', default="e-Bike.jpg")
 
     def __str__(self):
