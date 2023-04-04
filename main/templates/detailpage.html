@@ -174,18 +174,20 @@
             <p class="font">Reichweite: {{object.distance}}km</p>
             <p class="font">Gewicht: {{object.weight}}kg</p>
             <p class="font">Preis pro Tag: {{object.price}}€</p> 
-            <p class="font">Standort: {{object.Standort}}
-                <select class="dropdown" name="Location">
-                    <!--<option disabled="true" selected>Standort auswählen</option>-->
-                    {% for item in bez %}
-                    <option method="ORT">{{ item }}</option>
-                    {% endfor %}
-                </select>
-            </p>
+
             <p class="font">Von: <input class="timepicker" type="text" name="Date" id="Datepicker"> 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Bis: <input class="timepicker" type="text" name="Date2" id="sdate"> 
-            <div id="picture-box"></p>
+            </p>
+            <p class="font">Standort:
+                <!--<select class="dropdown" name="Location">
+                    <option disabled="true" selected>Standort auswählen</option>
+                    {% for item in bez %}
+                    <option method="ORT">{{ item }}</option>
+                    {% endfor %}
+                </select>-->
+            </p>
+            <div id="picture-box">
                 
 
                 {% if image == 1%}
@@ -199,8 +201,20 @@
                 {% endif %}
             </div>
             <div id="middle-bottom-centre">
-                <form action="http://127.0.0.1:8000/bookingpage/">
-                    <button>Jetzt Buchen!</button>
+                <form method="get" action="http://127.0.0.1:8000/bookingpage/">
+                    <button type="submit" value="Dhbw" name="Dhbw">
+                        DHBW-Mannheim!
+                    </button>
+                </form>
+                <form method="get" action="http://127.0.0.1:8000/bookingpage/">
+                    <button type="submit" value="Hbf" name="Hbf">
+                        Hauptbahnhof!
+                    </button>
+                </form>
+                <form method="get" action="http://127.0.0.1:8000/bookingpage/">
+                    <button type="submit" value="Wt" name="Wt">
+                        Wasserturm!
+                    </button>
                 </form>
             </div>
         </div>

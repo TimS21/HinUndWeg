@@ -34,8 +34,6 @@ def detailpage(request):
 def bookingpage(request):
     return render(request, 'bookingpage.html')
 
-def confirmationpage(request):
-    return render(request, 'confirm.html')
 
 def uploadData(request):
     if request.POST:
@@ -44,7 +42,22 @@ def uploadData(request):
         if form.is_valid():
             form.save()
             return redirect(overview)
-    return render(request, 'bookingpage.html', {'form' : UploadForm})
+    
+    if request.GET.get("Dhbw") == "Dhbw":
+        map = 1
+    elif request.GET.get("Hbf") == "Hbf":
+        map = 2
+    elif request.GET.get("Wt") == "Wt":
+        map = 3
+    
+    context = {
+        "map":map,
+        "form":UploadForm
+    }
+    return render(request, 'bookingpage.html', context)
+
+def confirmationpage(request):
+    return render(request, 'confirm.html')
 
 def imprint(request):
     if request.method == "POST":
@@ -66,7 +79,17 @@ def imprint(request):
         return render(request, 'imprint.html', {})
 
 def overview(request):
-    return render(request, 'overview.html')
+    if request.GET.get("Dhbw") == "Dhbw":
+        map = 1
+    elif request.GET.get("Hbf") == "Hbf":
+        map = 2
+    elif request.GET.get("Wt") == "Wt":
+        map = 3
+
+    context = {
+        "map":map
+    }
+    return render(request, 'overview.html', context)
 
     
 

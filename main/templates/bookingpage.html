@@ -156,11 +156,25 @@
               </div>
               {% endif %}
                 <div id="position-button">
+                  {% if map == 1%}
                   <form action="http://127.0.0.1:8000/overview/">
-                    <button>Bestätigen</button>
+                    <button type="submit" value="Dhbw" name="Dhbw">Bestätigen</button>
                   </form>
+                  {% endif %}
+                  {% if map == 2%}
+                  <form action="http://127.0.0.1:8000/overview/">
+                    <button type="submit" value="Hbf" name="Hbf">Bestätigen</button>
+                  </form>
+                  {% endif %}
+                  {% if map == 3%}
+                  <form action="http://127.0.0.1:8000/overview/">
+                    <button type="submit" value="Wt" name="Wt">Bestätigen</button>
+                  </form>
+                  {% endif %}
                 </div>
+                
             </form>
+            
           </div>
       </div>
     <footer>
