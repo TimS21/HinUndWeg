@@ -81,13 +81,17 @@ def imprint(request):
 def overview(request):
     if request.GET.get("Dhbw") == "Dhbw":
         map = 1
+        Text = "DHBW-Mannheim"
     elif request.GET.get("Hbf") == "Hbf":
         map = 2
+        Text = "Hauptbahnhof"
     elif request.GET.get("Wt") == "Wt":
         map = 3
+        Text = "Wasserturm"
 
     context = {
-        "map":map
+        "map":map,
+        "text":Text
     }
     return render(request, 'overview.html', context)
 
