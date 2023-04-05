@@ -173,8 +173,17 @@
             <p class="font">{{object.Beschreibung}}</p>
             <p class="font">Reichweite: {{object.distance}}km</p>
             <p class="font">Gewicht: {{object.weight}}kg</p>
-            <p class="font">Preis pro Tag: {{object.price}}€</p> 
-
+            <p class="font">Preis pro Tag: {{object.price}}€
+            </p> 
+            <p class="font">Anzahl Fahrzeuge: 
+            <select name="anzahl">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            </p>
             <p class="font">Von: <input class="timepicker" type="text" name="Date" id="Datepicker"> 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Bis: <input class="timepicker" type="text" name="Date2" id="sdate"> 
@@ -192,11 +201,9 @@
 
                 {% if image == 1%}
                     <img src="{% static 'images\detailpage\e-Bike.jpg'%}"width="390" height="380">
-                {% endif %}
-                {% if image == 2%}
+                {% elif image == 2%}
                     <img src="{% static 'images\detailpage\E-Roller.jpg'%}"width="400" height="390">
-                {% endif %}
-                {% if image == 3%}
+                {% elif image == 3%}
                     <img src="{% static 'images\detailpage\E-Scooter.jpg'%}"width="360" height="370">
                 {% endif %}
             </div>
