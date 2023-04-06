@@ -215,24 +215,21 @@
             <!--<h3 id="ava-bike">Verfügbar: X</h3>
             <h3 id="ava-roller">Verfügbar: X</h3>
             <h3 id="ava-scooter">Verfügbar: X</h3>-->
-
+            {% if user.is_authenticated%}
             <form method="get" action="http://127.0.0.1:8000/detailpage/">
                 <button type="submit" value="Bike" name="Bike">
                     <img src="{% static 'images/e-Bike.jpg'%}" width="450" height="450">
                 </button>
+                <button type="submit" value="Roller" name="Roller">                    
+                    <img src="{% static 'images/E-Roller.jpg'%}" width="450" height="450">
+                </button>
+                <button type="submit" value="Scooter" name="Scooter">
+                    <img src="{% static 'images/E-Scooter.jpg'%}" width="450" height="450">
+                </button>
             </form>
-                <form method="get" action="http://127.0.0.1:8000/detailpage/">
-                    <button type="submit" value="Roller" name="Roller">                    
-                        <img src="{% static 'images/E-Roller.jpg'%}" width="450" height="450">
-                    </button>
-                </form>
-
-                
-                <form method="get" action="http://127.0.0.1:8000/detailpage/">
-                    <button type="submit" value="Scooter" name="Scooter">
-                        <img src="{% static 'images/E-Scooter.jpg'%}" width="450" height="450">
-                    </button>
-                </form>
+            {% else %}
+            <p>Bitte melden Sie sich an!</p>
+            {% endif %}
         </div>
     </div>
 
