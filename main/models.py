@@ -62,15 +62,15 @@ class Vehicles(models.Model):
     lid = models.ForeignKey(Location, on_delete=models.CASCADE, default="1")
 
     def __str__(self):
-        return self.vid + ' ' + self.type
+        return str(self.vid) + ' ' + str(self.type)
     
     
 class Buchungstabelle(models.Model):
     bid = models.IntegerField(primary_key=True, default=0)
     vid = models.ForeignKey(Vehicles, on_delete=models.CASCADE)
     uid = models.ForeignKey(User, on_delete=models.CASCADE)
-    tstart = models.IntegerField(default=1)
-    tend = models.IntegerField(default=2)
+    tstart = models.DateField()
+    tend = models.DateField()
 
     def __str__(self):
-        return 'Buchungsnummer: ' + self.bid
+        return 'Buchungsnummer: ' + str(self.bid)

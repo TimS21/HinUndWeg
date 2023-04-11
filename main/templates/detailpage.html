@@ -193,11 +193,13 @@
     </header>
     <div id="middle">
         <div id="info-card">
+        <form method="get" action="http://127.0.0.1:8000/overview/">
             <h1 class="font-überschrift">{{object.type}}</h1>
             <p class="font">{{object.Beschreibung}}</p>
             <p class="font">Reichweite: {{object.distance}}km</p>
             <p class="font">Gewicht: {{object.weight}}kg</p>
             <p class="font">Preis pro Tag: {{object.price}}€
+                <input name="price" value="{{object.price}}" hidden="true">
             </p> 
             <p class="font">Anzahl Fahrzeuge: 
             <select name="anzahl">
@@ -208,44 +210,47 @@
                 <option>5</option>
             </select>
             </p>
+            <p class="font">Anzahl Tage (hier noch anderer Titel?): 
+                <select name="tage">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                </select>
+            </p>
             <p class="font">Von: <input class="timepicker" type="text" name="Date" id="Datepicker"> 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Bis: <input class="timepicker" type="text" name="Date2" id="sdate"> 
             </p>
-            <!--<p id="standort-text" class="font">Standort:
-                <select class="dropdown" name="Location">
-                    <option disabled="true" selected>Standort auswählen</option>
-                    {% for item in bez %}
-                    <option method="ORT">{{ item }}</option>
-                    {% endfor %}
-                </select>
-            </p>-->
-            <div id="picture-box">
-                
 
-                {% if image == 1%}
-                    <img src="{% static 'images\detailpage\e-Bike.jpg'%}"width="390" height="380">
-                {% elif image == 2%}
-                    <img src="{% static 'images\detailpage\E-Roller.jpg'%}"width="400" height="390">
-                {% elif image == 3%}
-                    <img src="{% static 'images\detailpage\E-Scooter.jpg'%}"width="360" height="370">
-                {% endif %}
-            </div>
-                <form method="get" action="http://127.0.0.1:8000/overview/">
                     <button id="button1" class="button" type="submit" value="Dhbw" name="Dhbw">
                         DHBW-Mannheim!
                     </button>
-                </form>
-                <form method="get" action="http://127.0.0.1:8000/overview/">
+        
                     <button id="button2" class="button" type="submit" value="Hbf" name="Hbf">
                         Hauptbahnhof!
                     </button>
-                </form>
-                <form method="get" action="http://127.0.0.1:8000/overview/">
+       
                     <button id="button3" class="button" type="submit" value="Wt" name="Wt">
                         Wasserturm!
                     </button>
-                </form>
+        </form>
+
+                <div id="picture-box">
+                
+
+                    {% if image == 1%}
+                        <img src="{% static 'images\detailpage\e-Bike.jpg'%}"width="390" height="380">
+
+                    {% elif image == 2%}
+                        <img src="{% static 'images\detailpage\E-Roller.jpg'%}"width="400" height="390">
+                    {% elif image == 3%}
+                        <img src="{% static 'images\detailpage\E-Scooter.jpg'%}"width="360" height="370">
+                    {% endif %}
+                </div>
         </div>
     </div>
 

@@ -79,6 +79,15 @@ def imprint(request):
         return render(request, 'imprint.html', {})
 
 def overview(request):
+    anzahl = int(request.GET['anzahl'])
+    price = int(request.GET['price'])
+    tage = int(request.GET['tage'])
+    gesamt = anzahl*price*tage
+
+    datum = int(request.GET['Date'])
+    datum2 = int(request.GET['Date2'])
+    dGes = datum2-datum
+
     if request.GET.get("Dhbw") == "Dhbw":
         map = 1
         Text = "DHBW-Mannheim"
@@ -91,7 +100,10 @@ def overview(request):
 
     context = {
         "map":map,
-        "text":Text
+        "text":Text,
+        "gesamt":gesamt,
+        "datum":dGes
+
     }
     return render(request, 'overview.html', context)
 
