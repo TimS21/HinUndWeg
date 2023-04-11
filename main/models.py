@@ -1,6 +1,7 @@
 from datetime import timezone
 import django.utils.timezone
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -35,13 +36,11 @@ class Type(models.Model):
 
 class User(models.Model):
     uid = models.IntegerField(primary_key=True)
-    Vorname = models.CharField(max_length=30, null=False, blank=False)
-    Nachname = models.CharField(max_length=30, null=False, blank=False)
-    EMailAdresse = models.EmailField(default="test@gmail.com")
-    telNr = models.IntegerField(default=1234)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.Vorname + ' ' + self.Nachname
+        return str(self.uid) + " " + str(self.user)
+
 
 
 class Location(models.Model):
