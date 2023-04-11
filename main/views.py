@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from hinUndWeg.forms import *
+import random
 
 from .models import *
 
@@ -57,7 +58,15 @@ def uploadData(request):
     return render(request, 'bookingpage.html', context)
 
 def confirmationpage(request):
-    return render(request, 'confirm.html')
+
+    rand = random.randint(0, 1000000)
+
+
+    context = {
+        "rand":rand,
+    }
+
+    return render(request, 'confirm.html', context)
 
 def imprint(request):
     if request.method == "POST":
@@ -84,9 +93,9 @@ def overview(request):
     tage = int(request.GET['tage'])
     gesamt = anzahl*price*tage
 
-    datum = int(request.GET['Date'])
-    datum2 = int(request.GET['Date2'])
-    dGes = datum2-datum
+    datum = request.GET['Date']
+    #datum2 = int(request.GET['Date2'])
+    dGes = 1
 
     if request.GET.get("Dhbw") == "Dhbw":
         map = 1
@@ -102,7 +111,7 @@ def overview(request):
         "map":map,
         "text":Text,
         "gesamt":gesamt,
-        "datum":dGes
+        "datum":datum,
 
     }
     return render(request, 'overview.html', context)
