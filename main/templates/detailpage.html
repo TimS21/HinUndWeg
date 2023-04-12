@@ -23,7 +23,7 @@
             font-family: 'Inter', sans-serif;
             font-family: 'Lato', sans-serif;
             background-size: cover;
-            height: 110%;
+            height: 120%;
             width: 100%;
             background-attachment: fixed;
             margin: 0;
@@ -131,7 +131,8 @@
             color: rgb(4, 50, 255);
             background-color: white;
             border-radius:30px;
-            width: 250px;
+            margin-left: 2%;
+            width: 50px;
             height: 30px;
             font-size: 17px;
             cursor: pointer;
@@ -202,7 +203,7 @@
                 <input name="price" value="{{object.price}}" hidden="true">
             </p> 
             <p class="font">Anzahl Fahrzeuge: 
-            <select name="anzahl">
+            <select class="dropdown" name="anzahl">
                 <option selected>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -210,8 +211,12 @@
                 <option>5</option>
             </select>
             </p>
+
+            <p class="font">Startdatum: <input class="timepicker" type="text" name="Date" id="Datepicker" required> 
+            </p>
+
             <p class="font">Anzahl Tage (hier noch anderer Titel?): 
-                <select name="tage">
+                <select class="dropdown" name="tage">
                     <option selected>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -220,10 +225,6 @@
                     <option>6</option>
                     <option>7</option>
                 </select>
-            </p>
-            <p class="font">Von: <input class="timepicker" type="text" name="Date" id="Datepicker" required> 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Bis: <input class="timepicker" type="text" name="Date2" id="sdate"> 
             </p>
 
                     <button id="button1" class="button" type="submit" value="Dhbw" name="Dhbw">
@@ -243,12 +244,11 @@
                 
 
                     {% if image == 1%}
-                        <img src="{% static 'images\detailpage\e-Bike.jpg'%}"width="390" height="380">
-
+                        <img src="{% static 'images\detailpage\e-Bike.jpg'%}"width="390" height="430">
                     {% elif image == 2%}
-                        <img src="{% static 'images\detailpage\E-Roller.jpg'%}"width="400" height="390">
+                        <img src="{% static 'images\detailpage\E-Roller.jpg'%}"width="390" height="430">
                     {% elif image == 3%}
-                        <img src="{% static 'images\detailpage\E-Scooter.jpg'%}"width="360" height="370">
+                        <img src="{% static 'images\detailpage\E-Scooter.jpg'%}"width="360" height="430">
                     {% endif %}
                 </div>
         </div>
@@ -257,9 +257,6 @@
     <script>
         $(function () {
           $("#Datepicker").datepicker();
-        });
-        $(function () {
-          $("#sdate").datepicker();
         });
       </script>
    
