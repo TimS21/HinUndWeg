@@ -6,7 +6,7 @@ Frontend: HTML + CSS
 
 Backend: Python
 
-Datenbank: MySQL
+Datenbank: SQLite
 
 Das alles wird im Framework von DJANGO genutzt.
 
@@ -39,18 +39,20 @@ https://mailtrap.io
 
 # Nach starten des Servers:
 
-http://127.0.0.1:8000/
+Landingpage: http://127.0.0.1:8000/
 
 URLs für einzelne Seiten:
 
 admin/
 
-landingpage/
-
 detailpage/
 
-bookingpage/
+overview/
 
 confirmationpage/
 
+members/login_user
 
+members/register_user
+
+imprint/
