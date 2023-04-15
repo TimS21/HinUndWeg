@@ -44,15 +44,15 @@ def uploadData(request):
             form.save()
             return redirect(overview)
     
-    if request.GET.get("Dhbw") == "Dhbw":
-        map = 1
-    elif request.GET.get("Hbf") == "Hbf":
-        map = 2
-    elif request.GET.get("Wt") == "Wt":
-        map = 3
+    #if request.GET.get("Dhbw") == "Dhbw":
+     #   map = 1
+    #elif request.GET.get("Hbf") == "Hbf":
+      #  map = 2
+    #elif request.GET.get("Wt") == "Wt":
+      #  map = 3
     
     context = {
-        "map":map,
+       # "map":map,
         "form":UploadForm
     }
     return render(request, 'bookingpage.html', context)
